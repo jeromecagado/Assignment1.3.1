@@ -8,18 +8,18 @@ namespace Assignment1._3._1
         {
           
             Console.WriteLine("Welcome to caculating an area of a shape. Choose between triangle, square, or a rectangle.\n");
-            Console.WriteLine("Please enter a \"1\" for triangle, \"2\" for square, or a \"3\" for a rectangle.\n, and \"4\" to exit.");
-            int promptInput = Convert.ToInt32(Console.ReadLine());
-            Prompt(promptInput);
+            Prompt();
                
         }
 
-        static void Prompt(int input)
+        static void Prompt()
         {
             bool flag = true;
             do
             {
-                switch (input)
+                Console.WriteLine("Please enter a \"1\" for triangle, \"2\" for square, or a \"3\" for a rectangle.\n, and \"4\" to exit.\n");
+                int promptInput = Convert.ToInt32(Console.ReadLine());
+                switch (promptInput)
                 {
                     case 1:
                         Console.WriteLine("Enter the base for the triangle.");
@@ -50,19 +50,7 @@ namespace Assignment1._3._1
                         break;
                     default:
                         Console.WriteLine("Incorrect input, try again.!");
-                        Console.WriteLine("Please enter a \"1\" for triangle, \"2\" for square, a \"3\" for a rectangle.\n, or \"4\" to exit.");
-                        input = Convert.ToInt32(Console.ReadLine());
                         break;
-                }
-
-                if (flag)
-                {
-                    Console.WriteLine("\nPlease enter a \"1\" for triangle, \"2\" for square, a \"3\" for a rectangle, or \"4\" to exit.");
-                    input = Convert.ToInt32(Console.ReadLine());
-                }
-                else if (input == 4)
-                {
-                    flag = false;
                 }
             } while (flag) ;
         }
